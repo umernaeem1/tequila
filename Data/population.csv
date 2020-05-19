@@ -1,0 +1,146 @@
+geo-id,municipality_code,cve_agee,cve_agem,municipality_name,population,state_name
+0,14001,14,1,Acatic,21206,Jalisco
+1,14002,14,2,Acatlan de Juarez,23241,Jalisco
+2,14003,14,3,Ahualulco de Mercado,21714,Jalisco
+3,14004,14,4,Amacueca,5545,Jalisco
+4,14005,14,5,Amatitan,14648,Jalisco
+5,14006,14,6,Ameca,57340,Jalisco
+6,14007,14,7,San Juanito de Escobedo,8896,Jalisco
+7,14008,14,8,Arandas,72812,Jalisco
+8,14009,14,9,El Arenal,17545,Jalisco
+9,14010,14,10,Atemajac de Brizuela,6655,Jalisco
+10,14011,14,11,Atengo,5400,Jalisco
+11,14012,14,12,Atenguillo,4115,Jalisco
+12,14013,14,13,Atotonilco el Alto,57717,Jalisco
+13,14014,14,14,Atoyac,8276,Jalisco
+14,14015,14,15,Autlan de Navarro,57559,Jalisco
+15,14016,14,16,Ayotlan,38291,Jalisco
+16,14017,14,17,Ayutla,12664,Jalisco
+17,14018,14,18,La Barca,64269,Jalisco
+18,14019,14,19,Bolanos,6820,Jalisco
+19,14020,14,20,Cabo Corrientes,10029,Jalisco
+20,14021,14,21,Casimiro Castillo,21475,Jalisco
+21,14022,14,22,Cihuatlan,39020,Jalisco
+22,14023,14,23,Zapotlan el Grande,100534,Jalisco
+23,14024,14,24,Cocula,26174,Jalisco
+24,14025,14,25,Colotlan,18091,Jalisco
+25,14026,14,26,Concepcion de Buenos Aires,5933,Jalisco
+26,14027,14,27,Cuautitlan de Garcia Barragan,17322,Jalisco
+27,14028,14,28,Cuautla,2171,Jalisco
+28,14029,14,29,Cuquio,17795,Jalisco
+29,14030,14,30,Chapala,48839,Jalisco
+30,14031,14,31,Chimaltitan,3771,Jalisco
+31,14032,14,32,Chiquilistlan,5814,Jalisco
+32,14033,14,33,Degollado,21132,Jalisco
+33,14034,14,34,Ejutla,2082,Jalisco
+34,14035,14,35,Encarnacion de Diaz,51396,Jalisco
+35,14036,14,36,Etzatlan,18632,Jalisco
+36,14037,14,37,El Grullo,23845,Jalisco
+37,14038,14,38,Guachinango,4323,Jalisco
+38,14039,14,39,Guadalajara,1495189,Jalisco
+39,14040,14,40,Hostotipaquillo,10284,Jalisco
+40,14041,14,41,Huejucar,6084,Jalisco
+41,14042,14,42,Huejuquilla el Alto,8781,Jalisco
+42,14043,14,43,La Huerta,23428,Jalisco
+43,14044,14,44,Ixtlahuacan de los Membrillos,41060,Jalisco
+44,14045,14,45,Ixtlahuacan del Rio,19005,Jalisco
+45,14046,14,46,Jalostotitlan,31948,Jalisco
+46,14047,14,47,Jamay,22881,Jalisco
+47,14048,14,48,Jesus Maria,18634,Jalisco
+48,14049,14,49,Jilotlan de los Dolores,9545,Jalisco
+49,14050,14,50,Jocotepec,42164,Jalisco
+50,14051,14,51,Juanacatlan,13218,Jalisco
+51,14052,14,52,Juchitlan,5515,Jalisco
+52,14053,14,53,Lagos de Moreno,153817,Jalisco
+53,14054,14,54,El Limon,5499,Jalisco
+54,14055,14,55,Magdalena,21321,Jalisco
+55,14056,14,56,Santa Maria del Oro,2517,Jalisco
+56,14057,14,57,La Manzanilla de la Paz,3755,Jalisco
+57,14058,14,58,Mascota,14245,Jalisco
+58,14059,14,59,Mazamitla,13225,Jalisco
+59,14060,14,60,Mexticacan,6034,Jalisco
+60,14061,14,61,Mezquitic,18084,Jalisco
+61,14062,14,62,Mixtlan,3574,Jalisco
+62,14063,14,63,Ocotlan,92967,Jalisco
+63,14064,14,64,Ojuelos de Jalisco,30097,Jalisco
+64,14065,14,65,Pihuamo,12119,Jalisco
+65,14066,14,66,Poncitlan,48408,Jalisco
+66,14067,14,67,Puerto Vallarta,255681,Jalisco
+67,14068,14,68,Villa Purificacion,11623,Jalisco
+68,14069,14,69,Quitupan,8691,Jalisco
+69,14070,14,70,El Salto,138226,Jalisco
+70,14071,14,71,San Cristobal de la Barranca,3176,Jalisco
+71,14072,14,72,San Diego de Alejandria,6647,Jalisco
+72,14073,14,73,San Juan de los Lagos,65219,Jalisco
+73,14074,14,74,San Julian,15454,Jalisco
+74,14075,14,75,San Marcos,3762,Jalisco
+75,14076,14,76,San Martin de Bolanos,3405,Jalisco
+76,14077,14,77,San Martin Hidalgo,26306,Jalisco
+77,14078,14,78,San Miguel el Alto,31166,Jalisco
+78,14079,14,79,Gomez Farias,14011,Jalisco
+79,14080,14,80,San Sebastian del Oeste,5755,Jalisco
+80,14081,14,81,Santa Maria de los Angeles,3726,Jalisco
+81,14082,14,82,Sayula,34829,Jalisco
+82,14083,14,83,Tala,69031,Jalisco
+83,14084,14,84,Talpa de Allende,14410,Jalisco
+84,14085,14,85,Tamazula de Gordiano,37986,Jalisco
+85,14086,14,86,Tapalpa,18096,Jalisco
+86,14087,14,87,Tecalitlan,16847,Jalisco
+87,14088,14,88,Tecolotlan,16573,Jalisco
+88,14089,14,89,Techaluta de Montenegro,3511,Jalisco
+89,14090,14,90,Tenamaxtlan,7051,Jalisco
+90,14091,14,91,Teocaltiche,40105,Jalisco
+91,14092,14,92,Teocuitatlan de Corona,10837,Jalisco
+92,14093,14,93,Tepatitlan de Morelos,136123,Jalisco
+93,14094,14,94,Tequila,40697,Jalisco
+94,14095,14,95,Teuchitlan,9088,Jalisco
+95,14096,14,96,Tizapan el Alto,20857,Jalisco
+96,14097,14,97,Tlajomulco de Zuniga,416626,Jalisco
+97,14098,14,98,San Pedro Tlaquepaque,608114,Jalisco
+98,14099,14,99,Toliman,9591,Jalisco
+99,14100,14,100,Tomatlan,35050,Jalisco
+100,14101,14,101,Tonala,478689,Jalisco
+101,14102,14,102,Tonaya,5930,Jalisco
+102,14103,14,103,Tonila,7256,Jalisco
+103,14104,14,104,Totatiche,4435,Jalisco
+104,14105,14,105,Tototlan,21871,Jalisco
+105,14106,14,106,Tuxcacuesco,4234,Jalisco
+106,14107,14,107,Tuxcueca,6316,Jalisco
+107,14108,14,108,Tuxpan,34182,Jalisco
+108,14109,14,109,Union de San Antonio,17325,Jalisco
+109,14110,14,110,Union de Tula,13737,Jalisco
+110,14111,14,111,Valle de Guadalupe,6705,Jalisco
+111,14112,14,112,Valle de Juarez,5798,Jalisco
+112,14113,14,113,San Gabriel,15310,Jalisco
+113,14114,14,114,Villa Corona,16969,Jalisco
+114,14115,14,115,Villa Guerrero,5638,Jalisco
+115,14116,14,116,Villa Hidalgo,18711,Jalisco
+116,14117,14,117,Canadas de Obregon,4152,Jalisco
+117,14118,14,118,Yahualica de Gonzalez Gallo,22284,Jalisco
+118,14119,14,119,Zacoalco de Torres,27901,Jalisco
+119,14120,14,120,Zapopan,1243756,Jalisco
+120,14121,14,121,Zapotiltic,29192,Jalisco
+121,14122,14,122,Zapotitlan de Vadillo,6685,Jalisco
+122,14123,14,123,Zapotlan del Rey,17585,Jalisco
+123,14124,14,124,Zapotlanejo,63636,Jalisco
+124,14125,14,125,San Ignacio Cerro Gordo,17626,Jalisco
+125,18001,18,1,Acaponeta,36572,Nayarit
+126,18002,18,2,Ahuacatlan,15229,Nayarit
+127,18003,18,3,Amatlan de Canas,11188,Nayarit
+128,18004,18,4,Compostela,70399,Nayarit
+129,18005,18,5,Huajicori,11400,Nayarit
+130,18006,18,6,Ixtlan del Rio,27273,Nayarit
+131,18007,18,7,Jala,17698,Nayarit
+132,18008,18,8,Xalisco,49102,Nayarit
+133,18009,18,9,Del Nayar,34300,Nayarit
+134,18010,18,10,Rosamorada,34393,Nayarit
+135,18011,18,11,Ruiz,23469,Nayarit
+136,18012,18,12,San Blas,43120,Nayarit
+137,18013,18,13,San Pedro Lagunillas,7510,Nayarit
+138,18014,18,14,Santa Maria del Oro,22412,Nayarit
+139,18015,18,15,Santiago Ixcuintla,93074,Nayarit
+140,18016,18,16,Tecuala,39756,Nayarit
+141,18017,18,17,Tepic,380249,Nayarit
+142,18018,18,18,Tuxpan,30030,Nayarit
+143,18019,18,19,La Yesca,13600,Nayarit
+144,18020,18,20,Bahia de Banderas,124205,Nayarit

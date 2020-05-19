@@ -202,7 +202,7 @@ app.layout = html.Div(children=[
                 html.Div([
                     html.H5('Crime by municipality'),
                     dcc.Graph(id='muni_output_fig')
-                ], style={'text-align':'center'}
+                ], style={'text-align': 'center'}
                 )
             ], className='row', style={'maxHeight': '80ex',
                                        #'overflowY': 'scroll',
