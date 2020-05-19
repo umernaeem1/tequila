@@ -166,8 +166,8 @@ app.layout = html.Div(children=[
 
     html.Div([
         # First row
-        html.H1('Project Tequila')
-    ], className='row'
+        html.H3('Project Tequila')
+    ], className='row', id='title'
     ),
     html.Div([                                                                                                  # this is going to be one row
 
@@ -175,7 +175,7 @@ app.layout = html.Div(children=[
             html.Div(children=[
                 html.Div(children=[
                     html.Div([
-                        html.Label('Select Crime Type'),
+                        html.P('Select Crime Type'),
                         dcc.Dropdown(
                             id='crime_type',
                             options=crime_type_options,
@@ -186,7 +186,7 @@ app.layout = html.Div(children=[
                     ], className='six columns'
                     ),
                     html.Div([
-                        html.Label('Select Municipality'),
+                        html.P('Select Municipality'),
                         dcc.Dropdown(
                             id='muni_type',
                             options=municipal_options,
@@ -196,15 +196,15 @@ app.layout = html.Div(children=[
                         ),
                     ], className='six columns'
                     )
-                ], className='row'
+                ], className='row pretty_container'
                 ),
 
                 html.Div([
                     html.H5('Crime by municipality'),
                     dcc.Graph(id='muni_output_fig')
-                ], style={'text-align': 'center'}
+                ], style={'text-align': 'center'}, className='pretty_container'
                 )
-            ], className='row', style={'maxHeight': '80ex',
+            ], className='row', style={'maxHeight': '83ex',
                                        #'overflowY': 'scroll',
                                        'width': '100%',
                                        'minWidth': '100%',
@@ -219,14 +219,14 @@ app.layout = html.Div(children=[
                     )
                 ]
                 )
-            ], className='row'
+            ], className='row pretty_container'
             )
         ], className='nine columns'
         ),
 
         html.Div([                                                                                                 # for news
             html.Div(children=update_news())
-        ], className='three columns'
+        ], className='three columns pretty_container'
         )
     ], className='row'
     )
