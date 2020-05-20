@@ -162,6 +162,8 @@ def filtered_data(df, muni, crime):
 
 app = dash.Dash('__main__')
 
+server = app.server
+
 app.layout = html.Div(children=[
 
     html.Div([
