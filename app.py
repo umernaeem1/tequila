@@ -120,8 +120,6 @@ layout = dict(
 
 fig = dict(data=[trace], layout=layout)
 
-external_stylesheets = ['assets/stylesheet.css']
-
 # Options for dropdown
 # Crime
 key = ['C' + str(i) for i in range(1, 41)]
@@ -160,14 +158,9 @@ def filtered_data(df, muni, crime):
 #################################
 external_stylesheets = ['https://codepen.io/umernaeem1/pen/XWmoxbw']
 
-<<<<<<< HEAD
-app = dash.Dash('__main__', external_stylesheets = external_stylesheets)
-=======
-
 app = dash.Dash('__main__', external_stylesheets=external_stylesheets)
 
 server = app.server
->>>>>>> fbe4a68fe674871eeffaafc69c1df33624753d63
 
 app.layout = html.Div(children=[
 
