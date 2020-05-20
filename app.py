@@ -158,9 +158,9 @@ def filtered_data(df, muni, crime):
     return dff
 
 #################################
+external_stylesheets = ['https://codepen.io/umernaeem1/pen/XWmoxbw']
 
-
-app = dash.Dash('__main__')
+app = dash.Dash('__main__', external_stylesheets = external_stylesheets)
 
 app.layout = html.Div(children=[
 
