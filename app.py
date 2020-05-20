@@ -120,7 +120,6 @@ layout = dict(
 
 fig = dict(data=[trace], layout=layout)
 
-external_stylesheets = ['assets/stylesheet.css']
 
 # Options for dropdown
 # Crime
@@ -157,8 +156,9 @@ def filtered_data(df, muni, crime):
 
     return dff
 
-#################################
 
+#################################
+external_stylesheets = ['https://codepen.io/umernaeem1/pen/XWmoxbw.css']
 
 app = dash.Dash('__main__', external_stylesheets=external_stylesheets)
 
