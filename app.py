@@ -12,11 +12,14 @@ from urllib.request import urlopen
 from urllib.parse import quote
 
 df = pd.read_csv('./Data/ref_data.csv', encoding='latin1')
-df_c = df.groupby(['municipal_code', 'year', 'crime_type']
-                  )['total_crime'].sum().reset_index()
-df_t = df_c.groupby(['municipal_code', 'year'])['total_crime'].sum().reset_index().rename(
-    columns={'total_crime': 'total_crime_m'})
-df_c = df_c.merge(df_t, on=['municipal_code', 'year'])
+df_c = df.groupby(['municipal_code', 'year', 'crime_type', 'population'], as_index=False
+                  )['total_crime'].sum()
+df_c['total_crime_p'] = round(
+    (df_c['total_crime'] / df_c['population']) * 100000, 2)
+
+# df_t = df_c.groupby(['municipal_code', 'year'])['total_crime'].sum().reset_index().rename(
+#     columns={'total_crime': 'total_crime_m'})
+# df_c = df_c.merge(df_t, on=['municipal_code', 'year'])
 df_c['muni_code_str'] = df_c['municipal_code'].apply(str)
 
 with open('./Data/mexico_correct.json') as f:
@@ -31,9 +34,8 @@ def news_get(query):
     '''
     Getting news from google news page
     '''
-
     url = urlopen(
-        'https://news.google.com/rss/search?q={0}&hl=en-PK&gl=PK&ceid=PK:en'.format(quote(query)))
+        'https://news.google.com/rss/search?q={0}&hl=es-419&gl=MX&ceid=MX:es'.format(quote(query)))
     xml_page = url.read()
     url.close()
     soup = BeautifulSoup(xml_page, "xml")
@@ -46,19 +48,19 @@ def news_get(query):
         source_web.append(i.source.attrs['url'])
 
     df = pd.DataFrame({'title': headline, 'date': date, 'url': url,
-                       'news_source': source, 'news_source_web': source_web}).iloc[1:]
+                       'news_source': source, 'news_source_web': source_web})
     return df
 
 # API Call to update news
 
 
-def update_news():
-    news = news_get('amatitan crime')
+def update_news(query):
+    news = news_get(query)
     news = pd.DataFrame(news[["title", "url"]])
     max_rows = 10
     return html.Div(
         children=[
-            html.P(className="p-news", children="Headlines"),
+            html.P(className="p-news", children=query),
             html.P(
                 className="p-news float-right",
                 children="Last update : "
@@ -89,8 +91,9 @@ def update_news():
 
 
 # Making the map
-pop = df.drop_duplicates(['municipal_code'])[
+pop = df[df['year'] == 2020].drop_duplicates(['municipal_code'])[
     ['municipal_code', 'municipal_name', 'geo-id', 'population']]
+
 
 trace = go.Choroplethmapbox(z=pop['population'],
                             locations=pop['geo-id'],
@@ -109,12 +112,12 @@ layout = dict(
     plot_bgcolor="#F9F9F9",
     paper_bgcolor="#F9F9F9",
     legend=dict(font=dict(size=10), orientation="h"),
-    title="Mexico municipality population choropleth",
+    title="Mexico municipality population choropleth (2020)",
     mapbox=dict(
         accesstoken=mapbox_access_token,
         style="light",
-        center=dict(lat=20.7922, lon=-104.1953),
-        zoom=5.5,
+        center=dict(lat=20.6597, lon=-103.3496),
+        zoom=7.5,
     ),
 )
 
@@ -123,7 +126,7 @@ fig = dict(data=[trace], layout=layout)
 
 # Options for dropdown
 # Crime
-key = ['C' + str(i) for i in range(1, 41)]
+key = ['C' + str(i) for i in range(1, 5)]
 value = sorted(list(df.crime_type.value_counts().index))
 crime_d = dict(zip(key, value))
 
@@ -151,7 +154,7 @@ municipal_options = [
 def filtered_data(df, muni, crime):
     dff = df[
         (df['muni_code_str'] == str(muni))
-        & (df['crime_code'].isin(crime))
+        & (df['crime_code'] == str(crime))
     ]
 
     return dff
@@ -166,13 +169,16 @@ server = app.server
 
 app.layout = html.Div(children=[
 
+    #----------------- First Row -------------------#
     html.Div([
-        # First row
-        html.H3('Project Tequila')
-    ], className='row', id='title'
+        html.H1('Project Tequila')
+    ], className='row', style={'text-align': 'center'}, id='title'
     ),
-    html.Div([                                                                                                  # this is going to be one row
 
+    #----------------- Second Row -------------------#
+    html.Div([
+
+        #-------------- Making Graph ----------------#
         html.Div([
             html.Div(children=[
                 html.Div(children=[
@@ -181,8 +187,8 @@ app.layout = html.Div(children=[
                         dcc.Dropdown(
                             id='crime_type',
                             options=crime_type_options,
-                            value=['C19', 'C14', 'C32'],
-                            multi=True,
+                            value='C1',
+                            # multi=True,
                             className="dcc_control",
                         )
                     ], className='six columns'
@@ -198,41 +204,50 @@ app.layout = html.Div(children=[
                         ),
                     ], className='six columns'
                     )
-                ], className='row pretty_container'
+                ], className='row flex-display'
                 ),
 
                 html.Div([
                     html.H5('Crime by municipality'),
+                    html.Label('Per 100k individuals'),
                     dcc.Graph(id='muni_output_fig')
-                ], style={'text-align': 'center'}, className='pretty_container'
+                ], style={'text-align': 'center'}
                 )
-            ], className='row', style={'maxHeight': '83ex',
-                                       #'overflowY': 'scroll',
-                                       'width': '100%',
-                                       'minWidth': '100%',
-                                       'padding-left': '3px'}
-            ),
-
-            html.Div([
-                html.Div(children=[
-                    dcc.Graph(
-                        id='mapa',
-                        figure=fig
-                    )
-                ]
-                )
-            ], className='row pretty_container'
+            ], className='row'
             )
-        ], className='nine columns'
+        ], className='six columns pretty_container'
         ),
 
-        html.Div([                                                                                                 # for news
-            html.Div(children=update_news())
-        ], className='three columns pretty_container'
+        #----------------- For Map ----------------#
+        html.Div([
+            html.Div(children=[
+                dcc.Graph(
+                    id='mapa',
+                    figure=fig
+                )
+            ]
+            )
+        ], className='six columns pretty_container'
         )
-    ], className='row'
-    )
-], className='container'
+    ], className='row flex-display'
+    ),
+
+    #----------------- Third Row -------------------#
+    html.Div([
+
+        html.Div(children=[update_news('Robo de camiones Jalisco')
+                           ], className='pretty_container six columns',
+                 ),
+
+        html.Div(children=[update_news('Robo de camiones Nayarit')
+                           ], className='pretty_container six columns',
+                 ),
+
+    ], className='row flex-display'
+    ),
+],  # className='container'
+    id="mainContainer",
+    style={"display": "flex", "flex-direction": "column"},
 )
 
 
@@ -243,12 +258,12 @@ app.layout = html.Div(children=[
 def update_fig(selected_muni, crime_type):
     dff = filtered_data(df_c, selected_muni, crime_type)
 
-    trace = go.Bar(
+    trace = go.Scatter(
         x=dff['year'],
-        y=dff['total_crime'],
-        text=dff['total_crime'],
-        textposition='outside',
-        marker_color='lightblue'
+        y=dff['total_crime_p'],
+        text=dff['total_crime_p'],
+        mode='lines+markers+text',
+        textposition='top center'
     )
 
     return {
